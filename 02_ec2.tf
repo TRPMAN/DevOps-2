@@ -1,5 +1,5 @@
 # Resource: EC2 Instance
-resource "aws_instance" "ec2_1" {
+resource "aws_instance" "ec2_tf_basic" {
   # .id come from attribute on document
   ami = data.aws_ami.ami.id
   instance_type = var.instance_type

@@ -1,4 +1,4 @@
-# Security Group for EC2
+# Security Group
 
 # Security Group for SSH
 resource "aws_security_group" "vpc_ssh" {

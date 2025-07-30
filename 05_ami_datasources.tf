@@ -1,5 +1,5 @@
 # Get latest AMI ID for Amazon Linux
-data "aws_ami" "example" {
+data "aws_ami" "ami" {
   most_recent      = true
   owners           = ["amazon"]
 
@@ -16,5 +16,10 @@ data "aws_ami" "example" {
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
+  }
+
+  filter {
+    name = "architecture"
+    values = "x86_64"
   }
 }

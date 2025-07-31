@@ -13,7 +13,10 @@ resource "aws_instance" "ec2_tf_basic" {
 
   # .id come from attribute on document
   vpc_security_group_ids = [aws_security_group.vpc_ssh.id, aws_security_group.vpc_web.id]
+
+  # create the same instance 2 times
+  count = 2
   tags = {
-    "name" = "ec2 demo"
+    "name" = "ec2 demo-${count.index}"
   }
 }

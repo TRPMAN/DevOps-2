@@ -14,9 +14,20 @@ resource "aws_instance" "ec2_tf_basic" {
   # .id come from attribute on document
   vpc_security_group_ids = [aws_security_group.vpc_ssh.id, aws_security_group.vpc_web.id]
 
+  # for_each receive only set of string or map !!! not list
+  for_each = toset(aws_availability_zones.ec2_zone.names)
   # create the same instance 2 times
-  count = 2
+  # count = 2
   tags = {
-    "Name" = "ec2 demo-${count.index}"
+    "Name" = "EC2Demo-${each.key}"
+  }
+
+
+}
+
+data "aws_availability_zones" "ec2_zone" {
+  filter {
+    name   = "opt-in-status"
+    values = ["opt-in-not-required"]
   }
 }

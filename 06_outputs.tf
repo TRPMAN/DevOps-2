@@ -32,6 +32,18 @@ output "output_map_ad" {
   value       = {for c, output in aws_instance.ec2_tf_basic : c => output.public_dns}
 }
 
+# Output - Loop Toset
+output "output_map_toset" {
+  description = "For loop with map advanced"
+  value       = toset([for output in aws_instance.ec2_tf_basic : output.public_dns])
+}
+
+# Output - Loop Tomap
+output "output_map_tomap" {
+  description = "For loop with map advanced"
+  value       = tomap({for c, output in aws_instance.ec2_tf_basic : c => output.public_dns})
+}
+
 # Output - Legacy Splat Operator
 /*
 output "legacy_splat_output" {
@@ -41,7 +53,10 @@ output "legacy_splat_output" {
 */
 
 # Output - Latest Generalized Splat Operator
+# for_each is not support this method
+/*
 output "generalized_splat_output" {
   description = "Generalized Splat Operator"
   value       = aws_instance.ec2_tf_basic[*].public_dns
 }
+*/

@@ -15,7 +15,10 @@ resource "aws_instance" "ec2_tf_basic" {
   vpc_security_group_ids = [aws_security_group.vpc_ssh.id, aws_security_group.vpc_web.id]
 
   # for_each receive only set of string or map !!! not list
-  for_each = toset(data.aws_availability_zones.ec2_zone.names)
+  for_each = toset(keys({
+    for az, details in data.aws_ec2_instance_type_offerings.inst_type: 
+    az => details.instance_types if length(details.instance_types) != 0
+  }))
   availability_zone = each.key
 
   # create the same instance 2 times

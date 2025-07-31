@@ -1,16 +1,18 @@
 # Terraform Output after apply
 
 # EC2 Public IP
-# output "instance_publicip" {
-#   description = "EC2 Instance Public IP"
-#   value       = aws_instance.ec2_tf_basic.public_ip
-# }
+/* 
+output "instance_publicip" {
+  description = "EC2 Instance Public IP"
+  value       = aws_instance.ec2_tf_basic.public_ip
+}
 
 # EC2 Public DNS
-# output "instance_publicdns" {
-#   description = "EC2 Instance Public DNS"
-#   value       = aws_instance.ec2_tf_basic.public_dns
-# }
+output "instance_publicdns" {
+  description = "EC2 Instance Public DNS"
+  value       = aws_instance.ec2_tf_basic.public_dns
+}
+*/
 
 # Output - Loop List
 output "output_list" {
@@ -31,10 +33,12 @@ output "output_map_ad" {
 }
 
 # Output - Legacy Splat Operator
+/*
 output "legacy_splat_output" {
   description = "Legacy Splat Operator"
   value       = aws_instance.ec2_tf_basic.*.public_dns
 }
+*/
 
 # Output - Latest Generalized Splat Operator
 output "generalized_splat_output" {

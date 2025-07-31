@@ -17,6 +17,6 @@ resource "aws_instance" "ec2_tf_basic" {
   # create the same instance 2 times
   count = 2
   tags = {
-    "name" = "ec2 demo-${count.index}"
+    "Name" = "ec2 demo-${count.index}"
   }
 }

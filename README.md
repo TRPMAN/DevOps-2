@@ -14,6 +14,7 @@ This is where I document my collection of DevOps projects that I created to prac
 Some of the topics I plan to explored include:
 
 - ✅ Terraform
+- ✅ AWS VPC, Bastion Host
 
 ---
 Thanks for visiting 💡 

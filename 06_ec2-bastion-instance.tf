@@ -8,6 +8,7 @@ module "ec2_bastion_instance" {
   instance_type = var.ec2_bastion_instance_type
   key_name = var.ec2_bastion_keypair
 
+  create_security_group = false
   vpc_security_group_ids = [module.ec2_bastion_sg.security_group_id]
   subnet_id = module.vpc_1.public_subnets[0] # want only 1 subnet
 

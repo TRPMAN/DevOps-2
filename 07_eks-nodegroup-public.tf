@@ -23,7 +23,7 @@ resource "aws_eks_node_group" "eks_ng_public" {
 
   update_config {
     max_unavailable = 1
-    max_unavailable_percentage = 50
+    #max_unavailable_percentage = 50
   }
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Node Group handling.
@@ -35,6 +35,6 @@ resource "aws_eks_node_group" "eks_ng_public" {
   ]
 
   tags = {
-    Name = "private-node-group"
+    Name = "public-node-group"
   }
 }

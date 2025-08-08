@@ -6,10 +6,9 @@ terraform {
       source = "hashicorp/aws"
       version = "~> 6.6"
     }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+      version = "~> 2.38"
+    }
   }
-}
-
-# Provider Block
-provider "aws" {
-  region = var.aws_region
 }

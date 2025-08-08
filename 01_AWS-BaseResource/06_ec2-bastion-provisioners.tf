@@ -7,7 +7,7 @@ resource "null_resource" "copy_keypair" {
     host = aws_eip.ec2_bastion_eip.public_ip
     user = "ec2-user"
     password = ""
-    private_key = file("../eks-terraform-key.pem")
+    private_key = file("../../eks-terraform-key.pem")
   } 
 
   # copy private key to bastion host

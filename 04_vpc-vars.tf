@@ -27,12 +27,12 @@ variable "vpc_public_subnets" {
   default     = ["10.0.101.0/24", "10.0.102.0/24"]
 }
 
-# VPC Private Subnets
-variable "vpc_private_subnets" {
-  description = "VPC Private Subnets"
-  type        = list(string)
-  default     = ["10.0.1.0/24", "10.0.2.0/24"]
-}
+# VPC Private Subnets - DISABLED
+# variable "vpc_private_subnets" {
+#   description = "VPC Private Subnets"
+#   type        = list(string)
+#   default     = ["10.0.1.0/24", "10.0.2.0/24"]
+# }
 
 # VPC Database Subnets
 variable "vpc_database_subnets" {
@@ -55,16 +55,16 @@ variable "vpc_create_database_subnet_route_table" {
   default     = true
 }
 
-# VPC Enable NAT Gateway (True or False) 
-variable "vpc_enable_nat_gateway" {
-  description = "Enable NAT Gateways for Private Subnets Outbound Communication"
-  type        = bool
-  default     = true
-}
+# VPC Enable NAT Gateway (True or False) - DISABLED
+# variable "vpc_enable_nat_gateway" {
+#   description = "Enable NAT Gateways for Private Subnets Outbound Communication"
+#   type        = bool
+#   default     = true
+# }
 
-# VPC Single NAT Gateway (True or False)
-variable "vpc_single_nat_gateway" {
-  description = "Enable only single NAT Gateway in one Availability Zone to save costs during our demos"
-  type        = bool
-  default     = true
-}
+# VPC Single NAT Gateway (True or False) - DISABLED
+# variable "vpc_single_nat_gateway" {
+#   description = "Enable only single NAT Gateway in one Availability Zone to save costs during our demos"
+#   type        = bool
+#   default     = true
+# }

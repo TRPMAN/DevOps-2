@@ -10,11 +10,11 @@ output "vpc_cidr_block" {
   value       = module.vpc_1.vpc_cidr_block
 }
 
-# VPC Private Subnets
-output "private_subnets" {
-  description = "List of IDs of private subnets"
-  value       = module.vpc_1.private_subnets
-}
+# VPC Private Subnets - DISABLED
+# output "private_subnets" {
+#   description = "List of IDs of private subnets"
+#   value       = module.vpc_1.private_subnets
+# }
 
 # VPC Public Subnets
 output "public_subnets" {
@@ -22,11 +22,11 @@ output "public_subnets" {
   value       = module.vpc_1.public_subnets
 }
 
-# VPC NAT gateway Public IP
-output "nat_public_ips" {
-  description = "List of public Elastic IPs created for AWS NAT Gateway"
-  value       = module.vpc_1.nat_public_ips
-}
+# VPC NAT gateway Public IP - DISABLED
+# output "nat_public_ips" {
+#   description = "List of public Elastic IPs created for AWS NAT Gateway"
+#   value       = module.vpc_1.nat_public_ips
+# }
 
 # VPC AZs
 output "azs" {

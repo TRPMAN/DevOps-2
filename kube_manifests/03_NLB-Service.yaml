@@ -1,0 +1,15 @@
+# Network Load Balancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp1-nlb-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+spec:
+  type: LoadBalancer
+  selector:
+    app: myapp1
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80

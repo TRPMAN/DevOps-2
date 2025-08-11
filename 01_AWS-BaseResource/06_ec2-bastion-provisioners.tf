@@ -12,7 +12,7 @@ resource "null_resource" "copy_keypair" {
 
   # copy private key to bastion host
   provisioner "file" {
-    source  = "../eks-terraform-key.pem"
+    source  = "../../eks-terraform-key.pem"
     destination = "/tmp/eks-terraform-key.pem"
   }
 

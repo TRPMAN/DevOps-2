@@ -7,6 +7,14 @@ terraform {
       version = "~> 6.6"
     }
   }
+
+  backend "s3" {
+    bucket = "devops2-tf-eks-bucket"
+    key = "dev/eks-cluster/terraform.tfstate"
+    region = "us-east-1"
+
+    dynamodb_table = "dev-ekscluster"
+  }
 }
 
 # Provider Block
